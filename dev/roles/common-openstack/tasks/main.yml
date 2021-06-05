@@ -20,6 +20,13 @@
     update_cache: yes
   tags:
     - common-openstack
+  
+# - name: Install openstacksdk
+#   pip:
+#     name: openstacksdk
+#     state: latest
+#   tags:
+#     - common-openstack
 
 - name: Install openstack client
   apt:
@@ -28,6 +35,16 @@
     update_cache: yes
   tags:
     - common-openstack
+
+- name: Alter python to python3
+  shell: update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+  tags:
+  - python
+
+- name: Alter python to python3
+  shell: update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+  tags:
+  - python
 
 # - name: Install openstack client
 #   pip:
@@ -44,9 +61,4 @@
 #   tags:
 #     - common-openstack
 
-# - name: Install newest openstack sdk
-#   pip:
-#     name: openstacksdk
-#     state: latest
-#   tags:
-#     - common-openstack
+
