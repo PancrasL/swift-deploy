@@ -36,10 +36,10 @@
   tags:
     - common-openstack
 
-- name: Alter python to python3
-  shell: update-alternatives --install /usr/bin/python python /usr/bin/python2 100
-  tags:
-  - python
+#- name: Alter python to python3
+#  shell: update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+#  tags:
+#  - python
 
 - name: Alter python to python3
   shell: update-alternatives --install /usr/bin/python python /usr/bin/python3 150
